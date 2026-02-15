@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option java_outer_classname = "FeatureProto";
+option java_multiple_files = true; // generates each message/service as separate Java class
+
+message User {
+  int64 id = 1;
+  string featureName = 2;
+  string pinCode=3;
+  google.protobuf.Timestamp raisedAt = 4;
+}
+
+message FeatureResponse {
+  bool enabled = 1;
+}
+
+service FeatureService {
+  rpc checkFeature (User) returns (FeatureResponse);
+}
