@@ -8,14 +8,11 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "feature_role")
-public class FeatureRole {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+public class FeatureRole extends BaseEntity{
 
-    @Column(name = "feature_id")
-    private Long featureId;
+    @JoinColumn(name = "feature_id")
+    @ManyToOne
+    private Feature feature;
 
     @Column(name = "role_name", length = 50)
     private String roleName;

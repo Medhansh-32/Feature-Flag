@@ -3,7 +3,8 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
 option java_outer_classname = "FeatureProto";
-option java_multiple_files = true; // generates each message/service as separate Java class
+ // generates each message/service as separate Java class
+option java_package = "com.tech.featureFlag";
 
 message User {
   int64 id = 1;

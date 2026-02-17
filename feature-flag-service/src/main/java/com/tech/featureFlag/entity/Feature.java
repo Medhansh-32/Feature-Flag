@@ -4,26 +4,33 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
 @Table(name = "feature")
-public class Feature {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+public class Feature extends BaseEntity{
 
-    @Column(name = "name", length = 100)
-    private String name;
+
+    @Column(name = "name")
+    private String featureName;
 
     @Column(name = "description")
-    private String description;
+    private String discription;
 
-    @Column(name = "is_active")
-    private Boolean isActive;
+    @Column(name = "isActive")
+    private boolean isActive;
 
     @Column(name = "rollout_percentage")
-    private Integer rolloutPercentage;
+    private double rolloutPercentage;
 
+    @OneToMany(mappedBy = "feature", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FeaturePinCode> pinCodes;
+
+    @OneToMany(mappedBy = "feature", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FeaturePlan> plans;
+
+    @OneToMany(mappedBy = "feature", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FeatureRole> roles;
 }

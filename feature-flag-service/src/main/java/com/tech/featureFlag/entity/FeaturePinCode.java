@@ -7,14 +7,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "feature_plan")
-public class FeaturePlan extends BaseEntity{
+@Table(name = "feature_pincode")
+public class FeaturePinCode extends BaseEntity{
+
 
     @JoinColumn(name = "feature_id")
     @ManyToOne
     private Feature feature;
 
-    @Column(name = "plan_type", length = 50)
-    private String planType;
+    @ManyToOne
+    @JoinColumn(name = "pincode_master_id")
+    private PinCodeMaster pinCodeMaster;
 
 }
