@@ -19,4 +19,19 @@ public class FeaturePinCode extends BaseEntity{
     @JoinColumn(name = "pincode_master_id")
     private PinCodeMaster pinCodeMaster;
 
+    public Feature getFeature() {
+        return feature;
+    }
+
+    public void setFeature(Feature feature) {
+        this.feature = feature;
+    }
+
+    public PinCodeMaster getPinCodeMaster() {
+        return pinCodeMaster;
+    }
+
+    public void setPinCodeMaster(PinCodeMaster pinCodeMaster) {
+        this.pinCodeMaster = pinCodeMaster;
+    }
 }

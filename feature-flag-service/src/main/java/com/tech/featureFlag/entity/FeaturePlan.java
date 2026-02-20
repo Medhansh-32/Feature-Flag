@@ -17,4 +17,20 @@ public class FeaturePlan extends BaseEntity{
     @Column(name = "plan_type", length = 50)
     private String planType;
 
+
+    public Feature getFeature() {
+        return feature;
+    }
+
+    public void setFeature(Feature feature) {
+        this.feature = feature;
+    }
+
+    public String getPlanType() {
+        return planType;
+    }
+
+    public void setPlanType(String planType) {
+        this.planType = planType;
+    }
 }

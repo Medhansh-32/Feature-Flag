@@ -17,4 +17,19 @@ public class FeatureRole extends BaseEntity{
     @Column(name = "role_name", length = 50)
     private String roleName;
 
+    public Feature getFeature() {
+        return feature;
+    }
+
+    public void setFeature(Feature feature) {
+        this.feature = feature;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 }
