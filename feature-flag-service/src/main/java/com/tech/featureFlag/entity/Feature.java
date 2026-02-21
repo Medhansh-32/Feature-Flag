@@ -33,6 +33,17 @@ public class Feature extends BaseEntity{
     @OneToMany(mappedBy = "feature", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
     private List<FeatureRole> roles;
 
+    @OneToOne(mappedBy = "feature", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
+    private FeatureVersionRule featureVersionRule;
+
+    public FeatureVersionRule getFeatureVersionRule() {
+        return featureVersionRule;
+    }
+
+    public void setFeatureVersionRules(FeatureVersionRule featureVersionRule) {
+        this.featureVersionRule = featureVersionRule;
+    }
+
     public String getFeatureName() {
         return featureName;
     }

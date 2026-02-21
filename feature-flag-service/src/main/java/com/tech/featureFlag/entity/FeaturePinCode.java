@@ -4,8 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "feature_pincode")
 public class FeaturePinCode extends BaseEntity{
@@ -18,6 +17,17 @@ public class FeaturePinCode extends BaseEntity{
     @ManyToOne
     @JoinColumn(name = "pincode_master_id")
     private PinCodeMaster pinCodeMaster;
+
+    @Column(name = "is_active")
+    private Boolean isActive;
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
 
     public Feature getFeature() {
         return feature;

@@ -17,6 +17,19 @@ public class FeatureRole extends BaseEntity{
     @Column(name = "role_name", length = 50)
     private String roleName;
 
+    @Column(name = "is_active")
+    private Boolean isActive;
+
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
+
+
     public Feature getFeature() {
         return feature;
     }
