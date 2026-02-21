@@ -17,8 +17,7 @@ public class FeatureCacheService {
     @Cacheable(
             value = "features",
             key = "#featureName",
-            unless = "#result == null",
-            sync = true
+            unless = "#result == null"
     )
     public Feature getFeature(String featureName) {
         return featureRepository
