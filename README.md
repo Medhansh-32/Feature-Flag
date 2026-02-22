@@ -1,5 +1,4 @@
 # Feature-Flag
-# Feature Flag Service
 
 ## Overview
 
@@ -98,7 +97,6 @@ Response:
 
 - Gradual feature rollout
 - A/B testing foundation
-- Environment-based feature control
 - Role-based feature gating
 - Safe production releases
 - Mobile app version control
@@ -125,17 +123,3 @@ The service can be:
 - Extensible rule evaluation logic
 
 ---
-
-## Future Enhancements (Optional)
-
-- Admin dashboard for feature management
-- Metrics & observability integration
-- Multi-variant experimentation
-- Distributed caching improvements
-- Feature audit logging
-
----
-
-## License
-
-Internal / Private Repository
